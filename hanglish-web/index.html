@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Hanglish</title>
+  <meta name="description" content="Write English in Hanglish blocks and send it as a picture.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Hanglish">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="bar">
+      <button type="button" class="bar-btn" id="help-btn" aria-label="How to use Hanglish">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.2.9-1.2 1.8v.4"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+      </button>
+      <h1>Hanglish</h1>
+      <div class="bar-right">
+        <button type="button" class="bar-btn" id="copy-btn" aria-label="Copy picture">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h2"/></svg>
+        </button>
+        <button type="button" class="bar-btn" id="clear-btn" aria-label="Clear message">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="message">
+      <div class="card" id="message-card">
+        <p id="placeholder">Type below. Your message appears here as the picture you'll send.</p>
+        <div id="image-holder"></div>
+      </div>
+      <p class="hint" id="hint">Tap <svg viewBox="0 0 30 26" width="20" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="24" height="18" rx="2.5"/><path d="M3 19l8-7 6 5 4-3 6 5"/></svg> to send it to WhatsApp or anywhere else.</p>
+    </main>
+
+    <div id="keyboard"></div>
+  </div>
+
+  <dialog id="help">
+    <h2 tabindex="-1">How to use Hanglish</h2>
+    <h3>Typing</h3>
+    <ul>
+      <li>Each block has three rows. The three block buttons choose the row: <b>top</b> = consonants before the vowel, <b>middle</b> = vowel (and grammar marks), <b>bottom</b> = consonants after it.</li>
+      <li>Tap <b>space</b> once to move to the next row. Tap it twice quickly to end the word.</li>
+      <li>The <b>two-boxes</b> key starts the next block in the same word.</li>
+      <li><b>Delete</b> removes the last thing you typed; hold it to keep deleting.</li>
+      <li><b>123</b> has digits and punctuation.</li>
+    </ul>
+    <h3>Sending</h3>
+    <ul>
+      <li>Tap the <b>picture</b> key, choose WhatsApp (or any app), then the chat.</li>
+      <li>Or tap <b>Copy</b> at the top and paste into a chat.</li>
+    </ul>
+    <h3>Put it on your Home Screen</h3>
+    <ul>
+      <li><b>iPhone:</b> in Safari, tap Share, then <b>Add to Home Screen</b>.</li>
+      <li><b>Android:</b> in Chrome, tap ⋮, then <b>Add to Home screen</b> or <b>Install app</b>.</li>
+      <li>It then opens full screen and works offline.</li>
+    </ul>
+    <form method="dialog"><button class="primary">Done</button></form>
+  </dialog>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
